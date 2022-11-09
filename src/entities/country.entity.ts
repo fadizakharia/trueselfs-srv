@@ -14,4 +14,5 @@ export class Country {
     srid: 4326,
   })
   location: Array<Array<number>>;
+  // later import geojson countries
 }

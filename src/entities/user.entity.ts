@@ -1,4 +1,5 @@
 import { Column, Entity, JoinColumn, OneToMany, PrimaryColumn } from 'typeorm';
+import { Point } from 'geojson';
 import {
   relationshipStatus,
   relationshipTypes,
@@ -34,4 +35,7 @@ export class User {
     enum: relationshipStatus,
   })
   relationshipStatus: relationshipTypes;
+
+  @Column({ type: 'st_geometry', srid: 4326, spatialFeatureType: 'Point' })
+  location: Point;
 }
